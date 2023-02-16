@@ -3,6 +3,8 @@
 #define true 1
 #define false 0
 
+//chua nop duoc
+
 int laSnt(int x)
 {
 	if(x<2)

@@ -16,7 +16,7 @@ void sieve(long long a, long long b)
 		prime[i] = 1;
 	for(long long i=2; i<=sqrt(b); i++)
 	{
-		for(long long j=i*i; j<=b; j+=i)
+		for(long long j=max(i*i,(a+i-1)/i*i); j<=b; j+=i)
 		{
 			prime[j-a] = 0;
 		}

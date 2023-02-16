@@ -21,7 +21,7 @@ int solve(int n)
 	for(int i=1; i<n; i++)
 	{
 		int x = tongUoc(i);
-		if(tongUoc(x) == i && x<n && x>i && i != tongUoc(i))
+		if(x<n && x>i && tongUoc(x)==i && i!=tongUoc(i))
 			printf("%d %d\n", i, x);
 	}
 }

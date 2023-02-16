@@ -51,7 +51,7 @@ int main()
 	int n;
 	scanf("%d", &n);
 	
-	printf("%d", n+demUoc(n)-demUocNt(n));
+	printf("%d\n", n+demUoc(n)-demUocNt(n));
 
 	return 0;
 }

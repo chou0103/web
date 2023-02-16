@@ -15,30 +15,22 @@ int laSnt(int x)
 	return true;
 }
 
-int demUocNt(int x)
+int demUoc(int x)
 {
 	int dem1=0;
+	int dem2=0;
 	for(int i=1; i<=x; i++)
 	{
 		if(laSnt(i) && x%i==0)
 		{
 			dem1++;
 		}
-	}
-	printf("%d", dem1);
-}
-
-int demUoc(int x)
-{
-	int dem2=0;
-	for(int i=1; i<=x; i++)
-	{
 		if(x%i==0)
 		{
 			dem2++;
 		}
 	}
-	printf("%d\n", dem2);
+	printf("%d\n%d\n", dem2, dem1);
 }
 
 
@@ -48,7 +40,6 @@ int main()
 	scanf("%d", &n);
 	
 	demUoc(n);
-	demUocNt(n);
 
 	return 0;
 }

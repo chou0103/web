@@ -6,10 +6,11 @@
 #define false 0
 #define MAX 1000
 
+//chua nop duoc
 
-int nhanBpCoLap(int A, int m, int k)
+long long nhanBpCoLap(long long A, long long m, long long k)
 {
-	int arr[MAX];
+	long long arr[MAX];
 	int index=0;
 	while(k>0)
 	{		
@@ -17,12 +18,12 @@ int nhanBpCoLap(int A, int m, int k)
 		k /= 2;		
 	}
 	
-	int b;
+	long long b;
 	if(arr[0] == 0)
 		b = 1;		
 	else
 		b = A;				
-	for(int i=1; i<index; i++)
+	for(long long i=1; i<index; i++)
 	{
 		A = (A*A)%m;
 		if(arr[i] != 0)
@@ -31,26 +32,29 @@ int nhanBpCoLap(int A, int m, int k)
 	return b;
 }
 
-int mbTest(int n)
+int mbTest(long long n)
 {
-	int s=0 ;
-	int r = n-1;
+	long long s=0 ;
+	long long r = n-1;
 	if(r==1)
 		return true;
-	while(1)
+	else
 	{
-		if(r%2 == 0)
+		while(1)
 		{
-			s++;
-			r /= 2;
+			if(r%2 == 0)
+			{
+				s++;
+				r /= 2;
+			}
+			else
+				break;
 		}
-		else
-			break;
 	}
-	
-	int a=2, j=1;	//2<=a<=n-2
-	int y = nhanBpCoLap(a,n,r);
-	for(int i=1; i<=4; i++)
+		
+	long long a=2, j=1;	//2<=a<=n-2
+	long long y = nhanBpCoLap(a,n,r);
+	for(long long i=1; i<=4; i++)
 	{
 		if(y != 1 && y != (n-1))
 		{
@@ -71,15 +75,10 @@ int mbTest(int n)
 
 int main()
 {
-	int n, a[MAX];
-	scanf("%d", &n);
+	long long n, a[MAX];
+	scanf("%lld", &n);
 
-//	if(mbTest(n))
-//		printf("La nguyen to");
-//	else
-//		printf("La hop so");
-
-	for(int i=2; i<=n; i++)
+	for(long long i=2; i<=n; i++)
 	{
 		if(mbTest(i))
 			printf("%d ", i);

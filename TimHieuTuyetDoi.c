@@ -33,7 +33,7 @@ void solve(int a[], int n)
 	{
 		for(int j=i; j<n; j++)
 		{
-			if(isPrime(a[i]) && isPrime(a[j]))
+			if(a[i]!=0 && a[j]!=0)
 			{
 				int tam = abs(a[i]-a[j]);
 				sub = max(sub,tam);
